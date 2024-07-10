@@ -10,4 +10,4 @@ Ce projet implémente une régression linéaire simple pour prédire le prix d'u
 
 - **Description** : Implémentation d'une régression linéaire pour prédire le prix des voitures en fonction du kilométrage.
 - **Répertoire** : `Machine Learning/ft_linear_regression_Python`
-- [README du Projet](./Machine%20Learning/ft_linear_regression_Python/README.md)
+- [README ft_linear_regression_Python](./Machine%20Learning/ft_linear_regression_Python/README.md)
