@@ -1,10 +1,6 @@
 import csv
 import matplotlib.pyplot as plt
 
-price,kilométrage
-
-
-
 # Prédiction pour un kilométrage donné avec les coefficients convertis
 def predict_price(distance, a, b):
     return a * distance + b
@@ -76,20 +72,25 @@ if __name__ == '__main__':
     price = []
 
     # Lecture du fichier CSV
-    with open(filename, 'r') as file:
-        reader = csv.reader(file)
-        next(reader)  # Pour sauter l'en-tête s'il y en a un
-        for row in reader:
-            if len(row) == 2:  # S'assure qu'il y a exactement deux colonnes par ligne
-                try:
-                    # Conversion des valeurs en float et ajout aux listes correspondantes
-                    mileage.append(float(row[0].strip()))
-                    price.append(float(row[1].strip()))
-                except ValueError as e:
-                    print(f"Erreur de conversion: {e}")
-                    continue
-            else:
-                print(f"Ignorer la ligne mal formatée: {row}")
+    try:
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            next(reader)  # Pour sauter l'en-tête s'il y en a un
+            for row in reader:
+                if len(row) == 2:  # S'assure qu'il y a exactement deux colonnes par ligne
+                    try:
+                        # Conversion des valeurs en float et ajout aux listes correspondantes
+                        mileage.append(float(row[0].strip()))
+                        price.append(float(row[1].strip()))
+                    except ValueError as e:
+                        print(f"Erreur de conversion: {e}")
+                        continue
+                else:
+                    print(f"Ignorer la ligne mal formatée: {row}")
+    except Exception as e:
+        print(f"Erreur lors de la lecture du fichier: {e}")
+        exit(1)
+
     # Affichage des listes remplies
     print("Mileage:", mileage)
     print("Price:", price)

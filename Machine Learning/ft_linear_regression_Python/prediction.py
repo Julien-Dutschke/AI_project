@@ -7,15 +7,17 @@ if __name__ == "__main__":
 	theta1 = 0
 
 	# Lecture des valeurs de theta0 et theta1 depuis le fichier thetas.txt
-	with open('thetas.txt', 'r') as file:
-		lines = file.readlines()
-		if len(lines) == 2:
-			try:
-				theta0 = float(lines[0])
-				theta1 = float(lines[1])
-			except ValueError:
-				print("Erreur de conversion")
-
+	try:
+		with open('thetas.txt', 'r') as file:
+			lines = file.readlines()
+			if len(lines) == 2:
+				try:
+					theta0 = float(lines[0])
+					theta1 = float(lines[1])
+				except ValueError:
+					print("Erreur de conversion")
+	except: Exception as e:
+		print(f"Erreur lors de la lecture du fichier: {e}\n Utilisation des valeurs par défaut de theta0 et theta1")
 	# Lecture d'une entrée depuis le terminal
 	try:
 		distance = float(input("Entrez un kilométrage: "))
