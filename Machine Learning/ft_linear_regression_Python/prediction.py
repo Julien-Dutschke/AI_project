@@ -16,8 +16,8 @@ if __name__ == "__main__":
 					theta1 = float(lines[1])
 				except ValueError:
 					print("Erreur de conversion")
-	except: Exception as e:
-		print(f"Erreur lors de la lecture du fichier: {e}\n Utilisation des valeurs par défaut de theta0 et theta1")
+	except Exception as e:
+		print(f"Erreur lors de la lecture du fichier: {e}\nUtilisation des valeurs par défaut de theta0 et theta1")
 	# Lecture d'une entrée depuis le terminal
 	try:
 		distance = float(input("Entrez un kilométrage: "))
