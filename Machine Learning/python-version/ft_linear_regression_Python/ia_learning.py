@@ -88,7 +88,7 @@ if __name__ == '__main__':
                 else:
                     print(f"Ignorer la ligne mal formatée: {row}")
     except Exception as e:
-        print(f"Erreur lors de la lecture du fichier: {e}")
+        print(f"Erreur lors de la lecture du fichier [data.csv]: {e}")
         exit(1)
 
     # Affichage des listes remplies
